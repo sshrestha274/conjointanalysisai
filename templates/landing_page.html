@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            background-color: #004A8F; /* Tufts Blue */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 25%;
+            margin-top: 10px;
+            background-color: #ffffff; /* White submit button */
+            color: #004A8F; /* Tufts Blue text */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>HIA 218: Applications of Big Data and AI in Public Health</h1>
+    <h2>An Experimental Survey to Examine Preferences Towards AI Solutions in Healthcare</h2>
+    <form action="/conjoint" method="post">
+        {{ form.hidden_tag() }}
+        <label for="age">Age:</label>
+        {{ form.age() }}
+
+        <label for="gender">Gender:</label>
+        {{ form.gender() }}
+
+        <label for="race_ethnicity">Race/Ethnicity:</label>
+        {{ form.race_ethnicity() }}
+
+        <input type="submit" value="Start Conjoint Analysis">
+    </form>
+</body>
+</html>
